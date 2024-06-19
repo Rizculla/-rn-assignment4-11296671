@@ -1,27 +1,39 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import JobCard from './JobCard';
+import { View, ScrollView, Text, StyleSheet } from 'react-native';
+import JobCard from './JobCard'; // Assuming you have a JobCard component
 
 const FeaturedJobs = ({ jobs }) => {
   return (
-    <View style={styles.featuredJobsContainer}>
-      <Text style={styles.sectionTitle}>Featured Jobs</Text>
-      {jobs.map((job, index) => (
-        <JobCard key={index} {...job} />
-      ))}
-    </View>
+    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+      <View style={styles.container}>
+        <Text style={styles.title}>Featured Jobs</Text>
+        <View style={styles.cardContainer}>
+          {jobs.map((job, index) => (
+            <View key={index} style={styles.cardWrapper}>
+              <JobCard {...job} />
+            </View>
+          ))}
+        </View>
+      </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  featuredJobsContainer: {
-    padding: 16,
-    backgroundColor: '#f9f9f9',
+  container: {
+    paddingHorizontal: 10,
+    paddingBottom: 10,
   },
-  sectionTitle: {
-    fontSize: 20,
+  title: {
+    fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 8,
+    marginBottom: 10,
+  },
+  cardContainer: {
+    flexDirection: 'row',
+  },
+  cardWrapper: {
+    marginRight: 10, // Add margin to create space between cards
   },
 });
 
