@@ -1,4 +1,5 @@
 Student ID : 11296671
+
 Jobizz App
 Jobizz is a job search app that allows users to find and apply for job listings. The app features a clean and intuitive user interface, making it easy to search for jobs, view job details, and apply directly from the app.
 
@@ -32,7 +33,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/jobizz-app.git
+git clone https://github.com/Rizculla/jobizz-app.git
 Navigate to the project directory:
 
 bash
